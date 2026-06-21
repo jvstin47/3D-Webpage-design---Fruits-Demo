@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply text-orchard-text bg-orchard-light antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(44, 85, 48, 0.3) transparent;
+}
+
+/* Webkit scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(44, 85, 48, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(44, 85, 48, 0.45);
+}
+
+/* Glass panels */
+.glass-panel {
+  @apply bg-white/75 backdrop-blur-lg border border-white/50 shadow-xl;
+  border-radius: 20px;
+}
+
+.glass-panel-solid {
+  @apply bg-white/90 backdrop-blur-xl border border-white/60 shadow-2xl;
+  border-radius: 20px;
+}
+
+/* Orchard button */
+.btn-orchard {
+  @apply bg-orchard-dark text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+  box-shadow: 0 4px 14px rgba(44, 85, 48, 0.25);
+}
+.btn-orchard:hover {
+  @apply bg-[#1f3d22];
+  box-shadow: 0 6px 20px rgba(44, 85, 48, 0.35);
+  transform: translateY(-1px);
+}
+.btn-orchard:active {
+  transform: translateY(0);
+}
+
+/* Toast animation */
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes toast-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(-8px) scale(0.95); }
+}
+
+.toast-enter {
+  animation: toast-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.toast-exit {
+  animation: toast-out 0.25s ease-in forwards;
+}
+
+/* Organic badge */
+.organic-badge {
+  @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  color: #2e7d32;
+}
+
+/* Price tag */
+.price-tag {
+  background: linear-gradient(135deg, #fff8e1, #ffecb3);
+  @apply inline-flex items-center px-3 py-1 rounded-full font-bold;
+  color: #e65100;
+}
+
+/* Fruit catalog strip */
+.catalog-strip {
+  @apply flex gap-3 overflow-x-auto pb-2;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.catalog-strip::-webkit-scrollbar {
+  display: none;
+}
