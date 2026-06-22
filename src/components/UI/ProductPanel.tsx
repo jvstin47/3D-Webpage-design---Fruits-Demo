@@ -171,7 +171,7 @@ export const ProductPanel: React.FC = () => {
               <div className="flex items-center justify-center gap-1.5 mt-3">
                 <Truck size={12} className="text-gray-400" />
                 <p className="text-[11px] text-gray-400">
-                  {selectedFruit.inventory} lbs in stock · Free delivery over $25
+                    {activeFruit.inventory} lbs in stock · Free delivery over $25
                 </p>
               </div>
             </motion.div>

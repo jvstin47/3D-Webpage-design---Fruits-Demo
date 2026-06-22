@@ -1,6 +1,6 @@
 import React, { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { Text, Environment, Sparkles, useGLTF } from '@react-three/drei';
+import { Environment, Sparkles, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
 
 const USE_GLB_MODELS = false;
